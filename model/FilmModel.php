@@ -55,13 +55,14 @@ class filmModel {
 
     public function getFilmDetails($id) {
         $url = STAR_WARS_API_URL . "films/";
-        $this->logModel->saveLog('GET', $url, 200, "Obtendo detalhes do filme ID: $id");
+        $urlAud = STAR_WARS_API_URL . "films/{$id}/";
+        $this->logModel->saveLog('GET', $urlAud, 200, "Obtendo detalhes do filme ID: $id");
 
         $films = $this->makeRequest($url);
 
         if (!$films || !isset($films['results'])) {
             $errorMsg = "Erro ao buscar detalhes para o filme ID: $id.";
-            $this->logModel->saveError($url, $errorMsg);
+            $this->logModel->saveError($urlAud, $errorMsg);
             return ['error' => 'Detalhes do filme não encontrados.'];
         }
 
@@ -73,11 +74,11 @@ class filmModel {
 
         if (!$film) {
             $errorMsg = "Detalhes do filme não encontrados para o ID: $id.";
-            $this->logModel->saveError($url, $errorMsg);
+            $this->logModel->saveError($urlAud, $errorMsg);
             return ['error' => 'Detalhes do filme não encontrados.'];
         }
 
-        $this->logModel->saveLog('GET', $url, 200, "Detalhes do filme ID: $id obtidos com sucesso.");
+        $this->logModel->saveLog('GET', $urlAud, 200, "Detalhes do filme ID: $id obtidos com sucesso.");
 
         if (!empty($film['characters'])) {
             $characters = [];
