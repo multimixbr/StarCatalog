@@ -161,8 +161,8 @@
                 this.showPicker && this.showPicker();
             });
 
-            const apiUrl = '/processo_Seletivo/api/swapi.php';
-            const controllerUrl = '/processo_Seletivo/controller/FilmController.php';
+            const apiUrl = '.././api/swapi.php';
+            const controllerUrl = '.././controller/FilmController.php';
             var userId = "<?= isset($_SESSION['user']) ? $_SESSION['user']['id'] : ''; ?>";
             let allFilms = [];
 

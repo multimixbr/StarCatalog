@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `star_warss` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `star_warss`;
+CREATE DATABASE IF NOT EXISTS `star_wars` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `star_wars`;
 
 -- --------------------------------------------------------
 

@@ -147,7 +147,7 @@ $filmTrailer = $film->getFilmTrailer($filmId);
                 return;
             }
 
-            const apiUrl = `/processo_Seletivo/api/swapi.php?film_id=${filmId}`;
+            const apiUrl = `.././api/swapi.php?film_id=${filmId}`;
 
             $.get(apiUrl, function(data) {
                 if (data.error) {

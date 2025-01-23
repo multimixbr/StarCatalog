@@ -119,7 +119,7 @@
                     return;
                 }
             
-                $.post('/processo_Seletivo/controller/AuthController.php', {
+                $.post('.././controller/AuthController.php', {
                     action: 'login',
                     email: email,
                     password: password
